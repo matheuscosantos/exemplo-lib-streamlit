@@ -1,9 +1,7 @@
-mkdir -p ~/.streamlit/
-echo "\
+mkdir -p ~/.streamlit/echo "\
 [general]\n\
 email = \"oliveiramatheus77@gmail.com\"\n\
-" > ~/.streamlit/credentials.toml
-echo "\
+" > ~/.streamlit/credentials.tomlecho "\
 [server]\n\
 headless = true\n\
 enableCORS=false\n\
