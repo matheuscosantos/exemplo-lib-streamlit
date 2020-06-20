@@ -1,8 +1,5 @@
 import altair as alt
 import streamlit as st
-import time
-
-from funcoes.auxiliar.barra_de_carregamento import exibe_barra_de_carregamento
 
 
 def criar_histograma(coluna, df):
