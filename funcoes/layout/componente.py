@@ -3,8 +3,7 @@ import streamlit as st
 
 def cria_cabecalho():
     st.image('fatec.png', width=700)
-    st.title('Projeto Final Estatística')
-    st.header('Acompanhamento dos últimos 3 meses do COVID-19')
+    st.title('Análise dos dados do Vírus Covid-19 do dia 18/03 até 15/06')
 
 
 def cria_rodape():

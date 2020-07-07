@@ -1,9 +1,19 @@
-# Trabalho Final de Estatística
+# Trabalho de Estatística Aplicada
+## Análise dos dados do Vírus Covid-19 do dia 18/03 até 15/06
 
+### Fonte dos dados
+#### Brasil IO: https://brasil.io/dataset/covid19/caso_full/
 ## Streamlit
-Aplicações web usando streamlit.
+A aplicação foi desenvolvida usando a linguagem Python juntamente com o framework [Streamlit](https://www.streamlit.io/).
 
 Para rodar o Streamlit:
+
+Crie uma virtual env e depois instale as bibliotecas contidas no requirements.txt
+
+```bash
+> pip install -r requirements
+```
+Para executar o aplicativo:
 ```bash
 > streamlit run main.py
 ```

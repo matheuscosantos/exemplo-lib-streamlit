@@ -3,7 +3,9 @@ import pandas as pd
 
 
 def exibe_fonte():
-    st.markdown("Fonte: https://brasil.io/dataset/covid19/caso_full/");
+    st.markdown("Fonte: https://brasil.io/dataset/covid19/caso_full/")
+    st.markdown("Metadados: https://brasil.io/dataset/covid19/caso_full/#metadata")
+
 
 
 def exibe_numero_de_linhas(df):
@@ -45,6 +47,7 @@ def exibe_nome_das_colunas_object64(exploracao):
 def exibe_nome_de_todas_colunas(df):
     st.markdown('**Nome das colunas:**')
     st.markdown(list(df.columns))
+
 
 def consulta_colunas_e_tipos(df):
     aux = pd.DataFrame({"colunas": df.columns, "tipos": df.dtypes})
