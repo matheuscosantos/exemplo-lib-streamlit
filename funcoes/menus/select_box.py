@@ -3,7 +3,7 @@ import streamlit as st
 def menuPrincipal():
     opcao = st.selectbox(
         'Escolha a opção desejada',
-        ('Estatística Descritiva Univariada', 'Amostras - São José dos Campos')
+        ('Estatística Descritiva Univariada', 'Amostras - São José dos Campos', 'Descrição dos dados')
     )
     return opcao
 

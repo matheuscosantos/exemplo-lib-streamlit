@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def exibe_fonte():
-    st.markdown("https://colab.research.google.com/drive/1w45c0JINzq7YgXQ4hnGUgqe89Lii1-X0?usp=sharing");
+    st.markdown("Fonte: https://brasil.io/dataset/covid19/caso_full/");
 
 
 def exibe_numero_de_linhas(df):
