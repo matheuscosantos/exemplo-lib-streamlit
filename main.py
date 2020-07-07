@@ -15,6 +15,17 @@ def main():
     df = csv_para_dataframe()
     opcao = menuPrincipal()
 
+    amostra = df.sample(n=4081)
+
+    amostra = amostra.drop(['index',
+                            'epidemiological_week',
+                            'city_ibge_code',
+                            'estimated_population_2019',
+                            'is_repeated',
+                            'is_last',
+                            'order_for_place',
+                            'last_available_confirmed'], axis=1)
+
     if opcao == 'Estatística Descritiva Univariada':
         exibe_numero_de_linhas(df)
         exibe_numero_de_colunas(df)
@@ -31,18 +42,6 @@ def main():
         st.markdown("#### Grau de confiança: 99%")
         st.markdown("#### Margem de erro: 2%")
 
-        amostra = df.sample(n=4081)
-
-        amostra = amostra.drop(['index',
-                                'epidemiological_week',
-                                'city_ibge_code',
-                                'estimated_population_2019',
-                                'is_repeated',
-                                'is_last',
-                                'order_for_place',
-                                'last_available_confirmed'], axis=1)
-
-
         aux = consulta_colunas_e_tipos(amostra)
         colunas_numericas = consulta_colunas_numericas(aux)
         colunas_object = consulta_colunas_objetos(aux)
@@ -51,12 +50,6 @@ def main():
 
         cria_visualizacao_de_dados(amostra, colunas, colunas_numericas, colunas_object)
         cria_rodape()
-        #
-        # aux_amostra = consulta_colunas_e_tipos(amostra)
-        # colunas_numericas = consulta_colunas_numericas(aux_amostra)
-        #
-        # menu_analise_das_colunas(df, colunas_numericas)
-
 
     elif opcao == 'Amostras - São José dos Campos':
 
@@ -83,10 +76,17 @@ def main():
         cria_rodape()
 
     elif opcao == 'Descrição dos dados':
-        # st.markdown("* last_available_confirmed_per_100k_inhabitants:")
-        # st.markdown("* Confirmados acum./100k hab. Número de casos confirmados por 100.000 habitantes do último dia disponível igual ou anterior à data date.")
-        st.markdown("* last_available_confirmed_per_100k_inhabitants:"\
-                    "   * Confirmados acum./100k hab. Número de casos confirmados por 100.000 habitantes do último dia disponível igual ou anterior à data date.")
+        st.markdown("## Metadados")
+        st.markdown("### last_available_confirmed_per_100k_inhabitants:")
+        st.text("Confirmados acum./100k hab.")
+        st.markdown("### new_confirmed:")
+        st.text("Confirmações no dia.")
+        st.markdown("### last_available_deaths:")
+        st.text("Óbitos acum.")
+        st.markdown("### new_deaths:")
+        st.text("Óbitos no dia.")
+        st.markdown("### last_available_death_rate:")
+        st.text("Óbitos/confirmados.")
 
 
 if __name__ == '__main__':

@@ -11,28 +11,20 @@ def menuPrincipal():
 def menu_analise_das_colunas(df, colunas_numericas):
     col = st.selectbox('Selecione a coluna: ', colunas_numericas)
     if col is not None:
-        st.markdown('Selecione o que deseja analisar: ')
+        st.markdown('Média')
+        st.markdown(df[col].mean())
 
-        mean = st.checkbox('Média')
-        if mean:
-            st.markdown(df[col].mean())
+        st.markdown('Mediana')
+        st.markdown(df[col].median())
 
-        median = st.checkbox('Mediana')
-        if median:
-            st.markdown(df[col].median())
+        st.markdown('Desvio padrão')
+        st.markdown(df[col].std())
 
-        desvio_pad = st.checkbox('Desvio padrão')
-        if desvio_pad:
-            st.markdown(df[col].std())
+        # st.markdown('Kurtosis')
+        # st.markdown(df[col].kurtosis())
+        #
+        # st.markdown('Skewness')
+        # st.markdown(df[col].skew())
 
-        kurtosis = st.checkbox('Kurtosis')
-        if kurtosis:
-            st.markdown(df[col].kurtosis())
-
-        skewness = st.checkbox('Skewness')
-        if skewness:
-            st.markdown(df[col].skew())
-
-        describe = st.checkbox('Describe')
-        if describe:
-            st.table(df[colunas_numericas].describe().transpose())
+        st.markdown('Describe')
+        st.table(df[colunas_numericas].describe().transpose())
