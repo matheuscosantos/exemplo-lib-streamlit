@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 
 
+def exibe_fonte():
+    st.markdown("https://colab.research.google.com/drive/1w45c0JINzq7YgXQ4hnGUgqe89Lii1-X0?usp=sharing");
+
+
 def exibe_numero_de_linhas(df):
     st.markdown('**Número de linhas:**')
     st.markdown(df.shape[0])
@@ -54,7 +58,7 @@ def consulta_colunas_numericas(aux):
 
 def consulta_colunas_objetos(aux):
     colunas_object = list(aux[aux["tipos"] == "object"]["colunas"])
-    return  colunas_object
+    return colunas_object
 
 
 def consulta_colunas(df):
