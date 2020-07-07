@@ -3,7 +3,7 @@ import streamlit as st
 def menuPrincipal():
     opcao = st.selectbox(
         'Escolha a opção desejada',
-        ('Estatística Descritiva Univariada', 'Amostras - São José dos Campos', 'Descrição dos dados')
+        ('Estatística Descritiva Univariada', 'Análise Descritiva', 'Amostras - São José dos Campos', 'Descrição dos dados')
     )
     return opcao
 
@@ -20,11 +20,11 @@ def menu_analise_das_colunas(df, colunas_numericas):
         st.markdown('Desvio padrão')
         st.markdown(df[col].std())
 
-        # st.markdown('Kurtosis')
-        # st.markdown(df[col].kurtosis())
-        #
-        # st.markdown('Skewness')
-        # st.markdown(df[col].skew())
+        st.markdown('Kurtosis')
+        st.markdown(df[col].kurtosis())
+        
+        st.markdown('Skewness')
+        st.markdown(df[col].skew())
 
         st.markdown('Describe')
         st.table(df[colunas_numericas].describe().transpose())

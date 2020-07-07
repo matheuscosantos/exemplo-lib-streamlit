@@ -13,6 +13,7 @@ def main():
     cria_cabecalho()
     exibe_fonte()
     df = csv_para_dataframe()
+    data = df
     opcao = menuPrincipal()
 
     amostra = df.sample(n=4081)
@@ -50,6 +51,19 @@ def main():
 
         cria_visualizacao_de_dados(amostra, colunas, colunas_numericas, colunas_object)
         cria_rodape()
+
+    elif opcao == 'Análise Descritiva':
+        data = data.drop(['index',
+                    'epidemiological_week',
+                    'city_ibge_code',
+                    'estimated_population_2019',
+                    'is_repeated',
+                    'is_last',
+                    'order_for_place',
+                    'last_available_confirmed'], axis=1)
+        aux = consulta_colunas_e_tipos(data)
+        colunas_numericas = consulta_colunas_numericas(aux)
+        menu_analise_das_colunas(data, colunas_numericas)
 
     elif opcao == 'Amostras - São José dos Campos':
 
