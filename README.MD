@@ -4,8 +4,9 @@
 ### Fonte dos dados
 #### Brasil IO: https://brasil.io/dataset/covid19/caso_full/
 
+
 É possível verificar a aplicação no site
-### Aplicação Rodando: https://projeto-estatistica.herokuapp.com/
+## Aplicação Rodando: https://projeto-estatistica.herokuapp.com/
 
 ## Streamlit
 A aplicação foi desenvolvida usando a linguagem Python juntamente com o framework [Streamlit](https://www.streamlit.io/).
